@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            padding: 1%;
+
+       
+        }
+
+        .box3 {
+            border: 2px solid #333;
+            color: #333;
+            border-radius: 15px;
+            background-color: #fff;
+            padding: 3%;
+            width: 25%;
+            box-shadow: 5px 10px #999;
+        }
+
+        input {
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 1;
+            width: 100%;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #err {
+            color: red;
+            font-size: 16px;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="box3">
+        <h2>Hey just one more step...!</h2>
+        <form method="POST" action="/volunteer/register1">
+            Firstname: <input type="text" name="firstname" placeholder="Enter First name"><br><br>
+            Lastname: <input type="text" name="lastname" placeholder="Enter  Last name"><br><br>
+            EmailID:    <input type="email" name="email" placeholder="Enter email"><br><br>
+            Password: <input type="password" name="password" placeholder="Enter password"><br><br>
+           <center><button>Create account</button></center><br>
+           <center><span id="err"><%=temp%></span></center>
+        </form></div>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+       body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f4f4f4; 
+  color: #333; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px; 
+}
+
+h1 {
+  font-size: 36px;
+  color: #0099cc; 
+}
+
+p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.detail-label {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #0099cc; 
+}
+
+.detail-value {
+  color: #333; 
+}
+
+.no-data {
+  color: #555; 
+}
+.detail {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: #0099cc; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.logout-button:hover {
+    background-color: #0077aa;
+}
+
+.back-link {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+    text-decoration: none;
+    color: #0099cc; 
+}
+
+
+.back-link img {
+    width: 24px; 
+    height: 24px; 
+    vertical-align: middle;
+    margin-right: 5px; 
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <a class="back-link" href="javascript:history.back()">
+        <img src="https://cdn-icons-png.flaticon.com/128/2099/2099238.png" alt="Back">
+    </a>
+    <div class="detail">
+
+        <a  href="http://localhost:3000/">Logout</a>
+      </div>
+    <form method="POST" action="/volunteer3">
+        <div class="container">
+            <h1>Thank You!</h1>
+            <p>We appreciate your valuable contribution as a volunteer.</p>
+            
+            <% if (details) { %>
+              <div class="container">
+                <h2>Donor Information</h2>
+                <div class="detail-label">Name:</div>
+                <div class="detail-value"><%= details.Name %></div>
+                <div class="detail-label">Email:</div>
+                <div class="detail-value"><%= details.Email %></div>
+                <div class="detail-label">Location:</div>
+                <div class="detail-value"><%= details.Location %></div>
+                <div class="detail-label">Quantity:</div>
+                <div class="detail-value"><%= details.Quantity %></div>
+                <div class="detail-label">Contact Number:</div>
+                <div class="detail-value"><%= details.Contact_Number %></div>
+                <div class="detail-label">Status:</div>
+                <div class="detail-value"><%= details.Status %></div>
+              </div>
+            <% } else { %>
+              <p>No data available</p>
+            <% } %>
+        </div>
+       </form>
+</body>
+</html>

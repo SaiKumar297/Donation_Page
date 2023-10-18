@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7; /* Light gray background */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #fff; /* White background */
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .container h2 {
+      color: #0099cc; /* Dark blue header text */
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 24px;
+      color: #0099cc; /* Dark blue header text */
+    }
+
+    .username {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    .detail-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #666; /* Gray label color */
+    }
+
+    .detail-value {
+      color: #333; /* Dark gray text color for details */
+    }
+    .details-button{
+      background-color: #0099cc;
+      padding: 5px 10px;
+      border-radius: 15px;
+      color: white;
+    }
+
+
+    .details-button:hover {
+      background-color: #0077aa; /* Dark blue button background on hover */
+    }
+    #h{
+      margin-left: 37%;
+      font-size: 40px;
+    }
+    .detail{
+      background-color: #0099cc;
+      padding: 5px 10px;
+      border-radius: 15px;
+    }
+    a{
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>
+      <span class="username"><%= vname %></span>
+      <div class="detail">
+
+        <a  href="http://localhost:3000/">Logout</a>
+      </div>
+    </h1>
+    <h1 id="h">Donator's details</h1>
+    <% if (details && (details.length > 0)) { %>
+      <% details.forEach(item => { %>
+        <div class="container">
+          <h2>Donor Information</h2>
+          <div class="detail-label">Name:</div>
+          <div class="detail-value"><%= item.Name %></div>
+          <div class="detail-label">Email:</div>
+          <div class="detail-value"><%= item.Email %></div>
+          <div class="detail-label">Location:</div>
+          <div class="detail-value"><%= item.Location %></div>
+          <div class="detail-label">Quantity:</div>
+          <div class="detail-value"><%= item.Quantity %></div>
+          <div class="detail-label">Contact Number:</div>
+          <div class="detail-value"><%= item.Contact_Number %></div>
+          <div class="detail-label">Status:</div>
+          <div class="detail-value"><%= item.Status %></div>
+          <br>
+          <form method="POST" action="/volunteer2">
+            <input type="hidden" name="docId" value=<%= item.ID %>>
+            <button class="details-button" type="submit">Take Opportunity</button>
+          </form>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No data available</p>
+    <% } %>
+  </center>
+</body>
+</html>

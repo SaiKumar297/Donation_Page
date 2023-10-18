@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+               
+                background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                
+                height: 100%;
+            }  
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .mainbox{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                position: relative;
+                padding: 40px;
+                margin: 5% 15% 5% 15%;
+                border-radius: 20px;
+                 ;
+                
+                
+            }
+            .box1{
+                position: relative;
+                border: 1px solid black;
+               
+                height: 40%;
+                padding: 1%;
+                border-radius: 25px;
+          
+                padding:10px;
+                text-shadow: 1px 1px white;
+                box-shadow:5px 10px rgba(85, 82, 82, 0.493);
+            }
+            .box2{
+                border: 1px solid black;
+                height: 40%;
+                padding: 1.3%;
+                border-radius: 25px;
+               
+                padding:10px;
+                text-shadow: 1px 1px white;
+                box-shadow:5px 10px rgba(61, 60, 60, 0.525);
+
+            }
+            button{
+                border-radius: 25px;
+                font-size: large;
+            }
+            input{
+                border-radius: 25px;
+            }
+            p{
+                font-size: large;
+            }
+            #wrong{
+                color: red;;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <center><h1>Welcome to Donation Page</h1></center>
+        <div class="mainbox">
+        <div class="box1">
+        <form method="post" action="/login.ejs">
+            <center><h2>Sign In</h2></center>
+            Mail ID<br>
+            <input type="mail" name="lmail"> <br><br>
+            Password<br>
+            <input type="password" name="lpassword"><br><br>
+            <center><button>Login</button></center>
+        </form></div>
+        <div class="box2">
+            <center><h2>Sign Up</h2></center>
+            <p>Hurry up!!! <br>Register for free and <br>get weather updates <br> in just one click.</p>
+            <center><button><a href="http://localhost:3000/login/register">Register</a></button></center></div>
+        </div>
+    </body>
+</html>
